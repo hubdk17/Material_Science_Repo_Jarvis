@@ -1,0 +1,3 @@
+model,num_crystals_tested,so3_rotation_max_error,so3_rotation_mean_error,so3_rotation_relative_error,inversion_max_error,inversion_mean_error,reflection_max_error,reflection_mean_error,translation_max_error,translation_mean_error,symmetry_status
+B5_equivariant_e3nn,100,5.328516294866859e-07,1.6453627411650017e-07,0.00012289294436530524,0.0,0.0,0.0,0.0,0.0,0.0,SO(3) & O(3) & E(3) Equivariant
+B4_invariant_projected_5d,100,2.2574691772460938,1.1213416966795922,1.3718575015106185,0.0,0.0,1.6459003686904907,0.8886918884515762,0.0,0.0,Non-covariant (Control failure expected)

@@ -1,0 +1,21 @@
+jid,discrepancy,T1_json_max,official_target,T_csv_10x,num_full_sites,reason
+JVASP-4186,670.9949999999999,832.718,161.723,161.723,24,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-4267,521.6229999999999,564.775,43.152,43.152,16,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-55022,257.874,349.937,92.063,92.063,10,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-32309,249.888,400.053,150.165,150.16500000000002,22,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-53354,221.08300000000003,274.365,53.282,53.282,8,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-35453,207.227,226.618,19.391,19.391000000000002,7,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-56720,200.837,292.909,92.072,92.072,10,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-30537,193.397,335.745,142.348,142.348,9,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-35452,172.476,193.191,20.715,20.715,7,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-46890,170.451,303.745,133.294,133.29399999999998,9,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-35454,161.856,185.418,23.562,23.561999999999998,7,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-4152,155.31400000000002,184.312,28.998,28.997999999999998,6,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-32532,142.888,241.006,98.118,98.118,24,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-20530,133.18,189.734,56.554,56.554,6,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-20258,133.18,189.734,56.554,56.554,6,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-9088,131.808,235.548,103.74,103.74000000000001,10,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-31842,130.969,251.054,120.085,120.085,18,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-12122,127.514,190.939,63.425,63.425000000000004,12,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-34925,127.282,180.047,52.765,52.765,10,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell
+JVASP-50838,124.36700000000002,155.669,31.302,31.302,7,Official benchmark derived from Wyckoff CSV which omitted higher-EFG site present in full JSON unit cell

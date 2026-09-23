@@ -1,0 +1,75 @@
+[2026-09-24 02:39:59] [INFO] [five_fold_evaluation]: Starting frozen 5-fold evaluation on device: cuda
+[2026-09-24 02:39:59] [INFO] [five_fold_evaluation]: === Evaluating fold_0 (splits/tensor_grouped_fold_0.json) ===
+[2026-09-24 02:39:59] [INFO] [five_fold_evaluation]: [fold_0] Training B2 Local MLP...
+[2026-09-24 02:40:57] [INFO] [five_fold_evaluation]: Starting frozen 5-fold evaluation on device: cuda
+[2026-09-24 02:40:57] [INFO] [five_fold_evaluation]: === Evaluating fold_0 (splits/tensor_grouped_fold_0.json) ===
+[2026-09-24 02:40:58] [INFO] [five_fold_evaluation]: [fold_0] Computing B2 Local MLP predictions...
+[2026-09-24 02:41:06] [INFO] [five_fold_evaluation]: [fold_0] Training B4 Invariant GNN (5D)...
+[2026-09-24 02:41:48] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 97.4149 - Val Loss: 88.1241 (Best: 88.1241)
+[2026-09-24 02:42:03] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 96.5428 - Val Loss: 87.2527 (Best: 87.2527)
+[2026-09-24 02:42:18] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 95.9377 - Val Loss: 87.4001 (Best: 87.2527)
+[2026-09-24 02:42:32] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 95.7603 - Val Loss: 87.8898 (Best: 87.2527)
+[2026-09-24 02:42:46] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 95.6651 - Val Loss: 87.2059 (Best: 87.2059)
+[2026-09-24 02:42:56] [INFO] [five_fold_evaluation]: [fold_0] Training B5 Equivariant GNN (e3nn)...
+[2026-09-24 02:43:30] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 93.2874 - Val Loss: 80.6500 (Best: 80.6500)
+[2026-09-24 02:44:05] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 86.3076 - Val Loss: 77.1214 (Best: 77.1214)
+[2026-09-24 02:44:38] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 81.2830 - Val Loss: 73.4320 (Best: 73.4320)
+[2026-09-24 02:45:13] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 77.6140 - Val Loss: 70.9261 (Best: 70.9261)
+[2026-09-24 02:45:45] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 74.6356 - Val Loss: 69.3165 (Best: 69.3165)
+[2026-09-24 02:45:59] [INFO] [five_fold_evaluation]: === Evaluating fold_1 (splits/tensor_grouped_fold_1.json) ===
+[2026-09-24 02:45:59] [INFO] [five_fold_evaluation]: [fold_1] Computing B2 Local MLP predictions...
+[2026-09-24 02:46:04] [INFO] [five_fold_evaluation]: [fold_1] Training B4 Invariant GNN (5D)...
+[2026-09-24 02:46:48] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 96.1846 - Val Loss: 86.7773 (Best: 86.7773)
+[2026-09-24 02:47:04] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 95.1550 - Val Loss: 86.8807 (Best: 86.7773)
+[2026-09-24 02:47:19] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 94.9646 - Val Loss: 86.5353 (Best: 86.5353)
+[2026-09-24 02:47:34] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 94.7194 - Val Loss: 86.5197 (Best: 86.5197)
+[2026-09-24 02:47:49] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 94.7370 - Val Loss: 86.6465 (Best: 86.5197)
+[2026-09-24 02:47:58] [INFO] [five_fold_evaluation]: [fold_1] Training B5 Equivariant GNN (e3nn)...
+[2026-09-24 02:48:36] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 92.7500 - Val Loss: 80.8763 (Best: 80.8763)
+[2026-09-24 02:49:13] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 85.1072 - Val Loss: 76.7367 (Best: 76.7367)
+[2026-09-24 02:49:49] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 80.7312 - Val Loss: 74.4018 (Best: 74.4018)
+[2026-09-24 02:50:21] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 77.0852 - Val Loss: 71.7527 (Best: 71.7527)
+[2026-09-24 02:50:56] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 74.1000 - Val Loss: 70.2553 (Best: 70.2553)
+[2026-09-24 02:51:10] [INFO] [five_fold_evaluation]: === Evaluating fold_2 (splits/tensor_grouped_fold_2.json) ===
+[2026-09-24 02:51:10] [INFO] [five_fold_evaluation]: [fold_2] Computing B2 Local MLP predictions...
+[2026-09-24 02:51:14] [INFO] [five_fold_evaluation]: [fold_2] Training B4 Invariant GNN (5D)...
+[2026-09-24 02:51:52] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 94.4709 - Val Loss: 101.9727 (Best: 101.9727)
+[2026-09-24 02:52:05] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 94.1258 - Val Loss: 101.9643 (Best: 101.9643)
+[2026-09-24 02:52:18] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 93.4573 - Val Loss: 101.9003 (Best: 101.9003)
+[2026-09-24 02:52:34] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 93.1826 - Val Loss: 101.7690 (Best: 101.7690)
+[2026-09-24 02:52:49] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 93.1436 - Val Loss: 101.6043 (Best: 101.6043)
+[2026-09-24 02:52:59] [INFO] [five_fold_evaluation]: [fold_2] Training B5 Equivariant GNN (e3nn)...
+[2026-09-24 02:53:37] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 90.3992 - Val Loss: 94.1458 (Best: 94.1458)
+[2026-09-24 02:54:13] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 82.6979 - Val Loss: 89.0534 (Best: 89.0534)
+[2026-09-24 02:54:50] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 78.1502 - Val Loss: 86.1851 (Best: 86.1851)
+[2026-09-24 02:55:27] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 74.8142 - Val Loss: 84.7702 (Best: 84.7702)
+[2026-09-24 02:56:03] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 71.9004 - Val Loss: 82.8041 (Best: 82.8041)
+[2026-09-24 02:56:20] [INFO] [five_fold_evaluation]: === Evaluating fold_3 (splits/tensor_grouped_fold_3.json) ===
+[2026-09-24 02:56:20] [INFO] [five_fold_evaluation]: [fold_3] Computing B2 Local MLP predictions...
+[2026-09-24 02:56:25] [INFO] [five_fold_evaluation]: [fold_3] Training B4 Invariant GNN (5D)...
+[2026-09-24 02:57:09] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 93.2609 - Val Loss: 91.4493 (Best: 91.4493)
+[2026-09-24 02:57:25] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 92.8249 - Val Loss: 90.4797 (Best: 90.4797)
+[2026-09-24 02:57:40] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 92.0933 - Val Loss: 90.2978 (Best: 90.2978)
+[2026-09-24 02:57:54] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 92.0316 - Val Loss: 90.2399 (Best: 90.2399)
+[2026-09-24 02:58:10] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 91.8681 - Val Loss: 90.2415 (Best: 90.2399)
+[2026-09-24 02:58:19] [INFO] [five_fold_evaluation]: [fold_3] Training B5 Equivariant GNN (e3nn)...
+[2026-09-24 02:58:55] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 89.5138 - Val Loss: 83.8316 (Best: 83.8316)
+[2026-09-24 02:59:32] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 82.7838 - Val Loss: 79.4267 (Best: 79.4267)
+[2026-09-24 03:00:08] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 78.5878 - Val Loss: 77.1240 (Best: 77.1240)
+[2026-09-24 03:00:40] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 75.4060 - Val Loss: 75.3391 (Best: 75.3391)
+[2026-09-24 03:01:15] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 72.7023 - Val Loss: 74.1018 (Best: 74.1018)
+[2026-09-24 03:01:33] [INFO] [five_fold_evaluation]: === Evaluating fold_4 (splits/tensor_grouped_fold_4.json) ===
+[2026-09-24 03:01:33] [INFO] [five_fold_evaluation]: [fold_4] Computing B2 Local MLP predictions...
+[2026-09-24 03:01:38] [INFO] [five_fold_evaluation]: [fold_4] Training B4 Invariant GNN (5D)...
+[2026-09-24 03:02:17] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 94.2028 - Val Loss: 85.1495 (Best: 85.1495)
+[2026-09-24 03:02:32] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 93.6580 - Val Loss: 83.8765 (Best: 83.8765)
+[2026-09-24 03:02:47] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 93.1856 - Val Loss: 83.5661 (Best: 83.5661)
+[2026-09-24 03:03:02] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 93.0729 - Val Loss: 83.5085 (Best: 83.5085)
+[2026-09-24 03:03:18] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 93.0167 - Val Loss: 83.5111 (Best: 83.5085)
+[2026-09-24 03:03:27] [INFO] [five_fold_evaluation]: [fold_4] Training B5 Equivariant GNN (e3nn)...
+[2026-09-24 03:04:04] [INFO] [five_fold_evaluation]: Epoch 01/05 - Train Loss: 89.8712 - Val Loss: 77.7897 (Best: 77.7897)
+[2026-09-24 03:04:40] [INFO] [five_fold_evaluation]: Epoch 02/05 - Train Loss: 82.4576 - Val Loss: 73.4492 (Best: 73.4492)
+[2026-09-24 03:05:16] [INFO] [five_fold_evaluation]: Epoch 03/05 - Train Loss: 77.7911 - Val Loss: 70.2503 (Best: 70.2503)
+[2026-09-24 03:05:52] [INFO] [five_fold_evaluation]: Epoch 04/05 - Train Loss: 73.9486 - Val Loss: 68.4410 (Best: 68.4410)
+[2026-09-24 03:06:28] [INFO] [five_fold_evaluation]: Epoch 05/05 - Train Loss: 70.9909 - Val Loss: 66.4943 (Best: 66.4943)
+[2026-09-24 03:06:43] [INFO] [five_fold_evaluation]: Five-fold outer evaluation completed successfully.

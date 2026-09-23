@@ -1,0 +1,4 @@
+model,local_model_id,local_mae_V_A2,local_mae_10_21_V_m2,historical_leaderboard_mae_V_A2,historical_leaderboard_mae_10_21_V_m2,disclosed_differences,reproduction_claim
+ALIGNN,A5_alignn_eq,28.92,2.892,19.1211,1.9121,"Missing JVASP-51 in local training split (9,492 vs 9,493); differing training budget/epoch schedule; local reimplementation rather than original model checkpoint.",Split-compatible reimplementation; NOT an exact reproduction.
+CGCNN,A4_cgcnn,27.82,2.782,24.6695,2.467,Missing JVASP-51 in local training split; independent PyTorch reimplementation; differing optimizer schedule.,Split-compatible reimplementation; NOT an exact reproduction.
+Matminer + GBDT,A2_magpie_xgb,29.97,2.997,19.4382,1.9438,Uses Magpie composition feature subset with XGBoost rather than full Matminer multi-featurizer pipeline with exhaustive AutoML hyperparameter tuning.,Proxy baseline; NOT an exact reproduction.

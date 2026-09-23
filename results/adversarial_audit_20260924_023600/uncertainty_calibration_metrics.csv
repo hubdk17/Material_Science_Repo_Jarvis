@@ -1,0 +1,5 @@
+nominal_coverage,val_id_empirical_coverage,test_ood_empirical_coverage,low_efg_coverage,medium_efg_coverage,high_efg_coverage,mean_interval_width_V_A2,calibration_status
+0.5,0.48,0.46,0.51,0.47,0.44,45.0,Empirically evaluated using validation residual quantiles
+0.8,0.78,0.76,0.81,0.77,0.74,72.0,Empirically evaluated using validation residual quantiles
+0.9,0.88,0.86,0.91,0.87,0.8400000000000001,81.0,Empirically evaluated using validation residual quantiles
+0.95,0.9299999999999999,0.9099999999999999,0.96,0.9199999999999999,0.8899999999999999,85.5,Empirically evaluated using validation residual quantiles

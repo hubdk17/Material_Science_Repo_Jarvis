@@ -118,36 +118,75 @@ def compute_task_b_tensor_metrics(
     eval_set_errs = []
     axis_angular_errs = []
 
+    # Track exclusion reasons
+    excluded_degenerate_true = 0
+    excluded_degenerate_pred = 0
+    excluded_low_magnitude = 0
+    excluded_undefined_b0 = 0
+
+    is_b0 = bool(np.all(np.abs(V_pred_mat) < 1e-6))
+
     for i in range(N):
         Vt = V_true_mat[i]
         Vp = V_pred_mat[i]
+        frob_t = float(true_frob[i])
+        frob_p = float(np.linalg.norm(Vp, 'fro'))
 
         vxx_t, vyy_t, vzz_t, eta_t = compute_principal_components(Vt)
-        vxx_p, vyy_p, vzz_p, eta_p = compute_principal_components(Vp)
+
+        # Eigenvalues sorted by absolute magnitude: |lambda_1| <= |lambda_2| <= |lambda_3|
+        evals_t = np.linalg.eigvalsh((Vt + Vt.T) / 2.0)
+        ord_t = np.argsort(np.abs(evals_t))
+        lam_t = evals_t[ord_t]
+
+        if is_b0:
+            vzz_p = 0.0
+            eta_p = np.nan
+            evals_p = np.zeros(3)
+            excluded_undefined_b0 += 1
+        else:
+            vxx_p, vyy_p, vzz_p, eta_p = compute_principal_components(Vp)
+            evals_p = np.linalg.eigvalsh((Vp + Vp.T) / 2.0)
+            ord_p = np.argsort(np.abs(evals_p))
+            lam_p = evals_p[ord_p]
 
         vzz_errs.append(abs(vzz_t - vzz_p))
-        if abs(vzz_t) > 1e-3 and abs(vzz_p) > 1e-3:
+
+        # Sorted eigenvalue set error (permutation-invariant set error)
+        eval_set_errs.append(float(np.mean(np.abs(np.sort(evals_t) - np.sort(evals_p)))))
+
+        # Asymmetry parameter eta: valid only when |Vzz_true| > 1.0 and |Vzz_pred| > 1.0
+        if not is_b0 and abs(vzz_t) > 1.0 and abs(vzz_p) > 1.0:
             eta_errs.append(abs(eta_t - eta_p))
 
-        # Sorted eigenvalue set error
-        evals_t = np.sort(np.linalg.eigvalsh((Vt + Vt.T) / 2.0))
-        evals_p = np.sort(np.linalg.eigvalsh((Vp + Vp.T) / 2.0))
-        eval_set_errs.append(float(np.mean(np.abs(evals_t - evals_p))))
+        # Principal-axis angular error with scale-aware degeneracy check
+        if is_b0:
+            continue
 
-        # Principal-axis angular error for non-degenerate tensors
-        # Non-degenerate if |lambda_3| - |lambda_2| > degeneracy_threshold
-        evals_t_abs = np.abs(evals_t)
-        sort_order = np.argsort(evals_t_abs)
-        if (evals_t_abs[sort_order[2]] - evals_t_abs[sort_order[1]]) > degeneracy_threshold:
-            _, evecs_t = np.linalg.eigh((Vt + Vt.T) / 2.0)
-            _, evecs_p = np.linalg.eigh((Vp + Vp.T) / 2.0)
-            # Largest principal axis is the eigenvector of |Vzz|
-            z_axis_t = evecs_t[:, sort_order[2]]
-            z_axis_p = evecs_p[:, np.argsort(np.abs(evals_p))[2]]
-            # Angle between undirected axes: cos(theta) = |u . v|
-            cos_theta = np.clip(abs(np.dot(z_axis_t, z_axis_p)), 0.0, 1.0)
-            angle_deg = np.degrees(np.arccos(cos_theta))
-            axis_angular_errs.append(angle_deg)
+        if frob_t < 1.0 or frob_p < 1.0:
+            excluded_low_magnitude += 1
+            continue
+
+        # Scale-aware relative gap: min(|lam_3| - |lam_2|, |lam_2| - |lam_1|) / ||V||_F
+        gap_t = (np.abs(lam_t[2]) - np.abs(lam_t[1])) / max(frob_t, 1e-6)
+        gap_p = (np.abs(lam_p[2]) - np.abs(lam_p[1])) / max(frob_p, 1e-6)
+
+        tau = 0.05  # Scale-aware non-degeneracy threshold
+        if gap_t <= tau:
+            excluded_degenerate_true += 1
+            continue
+        if gap_p <= tau:
+            excluded_degenerate_pred += 1
+            continue
+
+        _, evecs_t = np.linalg.eigh((Vt + Vt.T) / 2.0)
+        _, evecs_p = np.linalg.eigh((Vp + Vp.T) / 2.0)
+        z_axis_t = evecs_t[:, ord_t[2]]
+        z_axis_p = evecs_p[:, ord_p[2]]
+
+        # Angle between undirected axes: cos(theta) = |u . v|
+        cos_theta = np.clip(abs(np.dot(z_axis_t, z_axis_p)), 0.0, 1.0)
+        axis_angular_errs.append(float(np.degrees(np.arccos(cos_theta))))
 
     return {
         "frobenius_error_mean": mean_frob,
@@ -157,8 +196,47 @@ def compute_task_b_tensor_metrics(
         "mean_symmetry_residual": mean_sym_residual,
         "mean_trace_residual": mean_trace_residual,
         "largest_principal_vzz_mae": float(np.mean(vzz_errs)) if vzz_errs else 0.0,
-        "asymmetry_eta_mae": float(np.mean(eta_errs)) if eta_errs else 0.0,
+        "asymmetry_eta_mae": float(np.mean(eta_errs)) if eta_errs else np.nan,
         "eigenvalue_set_mae": float(np.mean(eval_set_errs)) if eval_set_errs else 0.0,
-        "principal_axis_angle_deg": float(np.mean(axis_angular_errs)) if axis_angular_errs else 0.0,
-        "non_degenerate_fraction": float(len(axis_angular_errs) / N)
+        "principal_axis_angle_mean_deg": float(np.mean(axis_angular_errs)) if axis_angular_errs else np.nan,
+        "principal_axis_angle_median_deg": float(np.median(axis_angular_errs)) if axis_angular_errs else np.nan,
+        "principal_axis_angle_p90_deg": float(np.percentile(axis_angular_errs, 90)) if axis_angular_errs else np.nan,
+        "valid_eta_count": len(eta_errs),
+        "valid_orientation_count": len(axis_angular_errs),
+        "excluded_orientation_count": N - len(axis_angular_errs),
+        "excluded_degenerate_true": excluded_degenerate_true,
+        "excluded_degenerate_pred": excluded_degenerate_pred,
+        "excluded_low_magnitude": excluded_low_magnitude,
+        "excluded_undefined_b0": excluded_undefined_b0
     }
+
+
+def compute_crystal_macro_tensor_metrics(
+    V_true_mat: np.ndarray,
+    V_pred_mat: np.ndarray,
+    jids: List[str]
+) -> Dict[str, float]:
+    """Computes crystal-macro metrics where each crystal has equal weight."""
+    from collections import defaultdict
+    diff_mat = V_true_mat - V_pred_mat
+    site_frob_err = np.linalg.norm(diff_mat, axis=(-2, -1))
+    site_true_frob = np.linalg.norm(V_true_mat, axis=(-2, -1))
+
+    crystal_errors = defaultdict(list)
+    crystal_true = defaultdict(list)
+
+    for jid, err, tr in zip(jids, site_frob_err, site_true_frob):
+        crystal_errors[jid].append(err)
+        crystal_true[jid].append(tr)
+
+    crystal_mean_errs = [float(np.mean(errs)) for errs in crystal_errors.values()]
+    crystal_mean_true = [float(np.mean(trs)) for trs in crystal_true.values()]
+
+    return {
+        "crystal_macro_frobenius_mean": float(np.mean(crystal_mean_errs)),
+        "crystal_macro_frobenius_median": float(np.median(crystal_mean_errs)),
+        "crystal_macro_frobenius_p90": float(np.percentile(crystal_mean_errs, 90)),
+        "crystal_macro_frobenius_norm": float(np.sum(crystal_mean_errs) / (np.sum(crystal_mean_true) + 1e-6)),
+        "num_crystals": len(crystal_mean_errs)
+    }
+

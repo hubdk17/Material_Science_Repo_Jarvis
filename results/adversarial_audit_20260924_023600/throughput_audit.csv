@@ -1,0 +1,2 @@
+gpu_model,cuda_version,pytorch_version,numerical_precision,batch_size,warmup_batches,timed_batches,timed_crystals,timed_sites,graph_construction_included,dataloader_workers,crystals_per_sec,sites_per_sec,batch_latency_median_ms,batch_latency_p95_ms,peak_gpu_memory_mb
+NVIDIA GeForce RTX 5070 Laptop GPU,12.8,2.11.0+cu128,float32,32,1,7,200,1253,False,0,284.95181001600275,1785.2230897502573,35.86387634277344,37.938857078552246,72.39111328125
