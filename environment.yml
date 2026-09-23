@@ -1,0 +1,23 @@
+name: jarvis-efg-benchmark
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.9
+  - pip
+  - numpy>=1.24.0,<2.5.0
+  - scipy>=1.10.0
+  - pandas>=2.0.0
+  - scikit-learn>=1.3.0
+  - spglib>=2.0.0
+  - pip:
+      - torch==2.11.0
+      - torch-geometric==2.8.0.post1
+      - e3nn==0.6.0
+      - jarvis-tools==2026.6.12
+      - xgboost>=2.0.0
+      - pyyaml>=6.0
+      - pytest>=8.0.0
+      - tqdm>=4.65.0

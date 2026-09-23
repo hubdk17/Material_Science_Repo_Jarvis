@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, code, or datasets, please cite it as below."
+title: "Publication-Grade Leakage-Resistant Benchmark for Electric-Field-Gradient Predictions in Inorganic Crystals"
+authors:
+  - family-names: "Research"
+    given-names: "Materials Informatics"
+date-released: 2026-09-24
+version: 1.0.0
+doi: "10.6084/m9.figshare.12307700.v2"
+references:
+  - type: article
+    authors:
+      - family-names: "Choudhary"
+        given-names: "Kamal"
+      - family-names: "Ansari"
+        given-names: "Jaafar N."
+      - family-names: "Mazin"
+        given-names: "Igor I."
+      - family-names: "Sauer"
+        given-names: "Karen L."
+    title: "Density functional theory-based electric field gradient database"
+    journal: "Scientific Data"
+    volume: 7
+    issue: 1
+    pages: 351
+    year: 2020
+    doi: "10.1038/s41597-020-00707-8"

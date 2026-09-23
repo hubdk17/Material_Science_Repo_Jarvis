@@ -1,0 +1,18 @@
+metric,value
+Total Structures,15202
+Unique JARVIS IDs,15202
+Total Atomic Sites,95663
+Unique Chemical Systems,8144
+Unique Reduced Formulas,10982
+Duplicate Structure Groups,209
+Total Structures in Duplicate Groups,423
+Zero Tensor Sites (Frobenius < 1e-6),5227
+Zero Tensor Sites (%),5.46%
+Max Symmetry Residual (||V - V^T||_F),0.000000e+00
+Mean Symmetry Residual,0.000000e+00
+Max Trace Residual (|Tr(V)|),1.000000e-03
+Mean Trace Residual,2.968546e-04
+Max Eigenvalue Diff (VASP vs numpy),1.447269e-03
+Frobenius Norm Median,43.4025
+Frobenius Norm 99th Percentile,690.2150
+Frobenius Norm Max,3001.8021

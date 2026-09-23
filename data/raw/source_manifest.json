@@ -1,0 +1,76 @@
+{
+  "dataset_metadata": {
+    "title": "Density Functional Theory-based Electric Field Gradient Database",
+    "doi": "10.6084/m9.figshare.12307700.v2",
+    "source_url": "https://doi.org/10.6084/m9.figshare.12307700.v2",
+    "figshare_article_id": 12307700,
+    "version": 2,
+    "publication_date": "2020-08-07T01:45:32Z",
+    "license": "CC BY 4.0",
+    "citation": "Choudhary, K., Ansari, J. N., Mazin, I. I. & Sauer, K. L. Density functional theory-based electric field gradient database. Scientific Data 7, 351 (2020). https://doi.org/10.1038/s41597-020-00707-8",
+    "benchmark_source": {
+      "repository": "https://github.com/atomgptlab/jarvis_leaderboard",
+      "benchmark_name": "AI/SinglePropertyPrediction/dft_3d_max_efg"
+    }
+  },
+  "files": {
+    "JARVIS-EFG4.json": {
+      "role": "primary_structures_and_tensors",
+      "size_bytes": 18600334,
+      "sha256": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+      "md5": "5877c7410a76e412a695925eb5b4cd27"
+    },
+    "JARVIS-EFG4.csv": {
+      "role": "wyckoff_site_table",
+      "size_bytes": 3803092,
+      "sha256": "050d8f646e36c8a596ac35472cb8a756fe27d692a922a1c0315b0052d1abe08a",
+      "md5": "2b1f2a05e361ad7f2c34a52e7855dd9e"
+    },
+    "example.py": {
+      "role": "reference_script",
+      "size_bytes": 1445,
+      "sha256": "d85034fabf3a324ccc01640446f0e685d9d4eded4ffde7d4f1286555f64aed22",
+      "md5": "95ec80ce59df18a036c93e31283913ef"
+    },
+    "dft_3d_max_efg.json.zip": {
+      "role": "official_leaderboard_benchmark",
+      "size_bytes": 81561,
+      "sha256": "688ca60548d0f72d40d92a46511165191100fc33ec53b87e5a648eb6fc9a99a7",
+      "md5": "674663d42da9646d151d88b72157a3d3"
+    }
+  },
+  "schema_analysis": {
+    "total_records": 15202,
+    "record_type": "list of dict",
+    "fields": {
+      "jid": {
+        "inferred_type": "str",
+        "description": "Unique JARVIS material identifier"
+      },
+      "atoms": {
+        "inferred_type": "dict",
+        "subfields": {
+          "lattice_mat": "List[List[float]] (3x3 lattice vectors in Angstrom)",
+          "coords": "List[List[float]] (Nx3 fractional positions)",
+          "elements": "List[str] (length-N IUPAC chemical symbols)",
+          "abc": "List[float] (lengths [a, b, c] in Angstrom)",
+          "angles": "List[float] (angles [alpha, beta, gamma] in degrees)",
+          "cartesian": "bool (False indicates fractional coordinates)",
+          "props": "List[str] (length-N property tags)"
+        }
+      },
+      "efg_raw_tensor": {
+        "inferred_type": "List[List[List[float]]]",
+        "shape": "Nx3x3",
+        "unit": "V/Angstrom^2",
+        "description": "Raw Cartesian EFG tensors computed by VASP"
+      },
+      "efg_diag_tensor": {
+        "inferred_type": "List[List[float]]",
+        "shape": "Nx4",
+        "unit": "[Vxx, Vyy, Vzz] in V/Angstrom^2, eta dimensionless",
+        "description": "Principal EFG components and asymmetry parameter"
+      }
+    }
+  }
+}

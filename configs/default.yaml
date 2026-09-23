@@ -1,0 +1,23 @@
+seed: 42
+seeds: [42, 123, 999]
+device: "cuda"
+num_workers: 0
+
+paths:
+  raw_data_dir: "data/raw"
+  interim_data_dir: "data/interim"
+  processed_data_dir: "data/processed"
+  splits_dir: "splits"
+  results_dir: "results"
+  reports_dir: "reports"
+
+raw_files:
+  json_file: "data/raw/JARVIS-EFG4.json"
+  csv_file: "data/raw/JARVIS-EFG4.csv"
+  benchmark_zip: "data/raw/dft_3d_max_efg.json.zip"
+  manifest_file: "data/raw/source_manifest.json"
+
+graph_construction:
+  radius_cutoff: 5.0
+  max_neighbors: 16
+  self_edges: false

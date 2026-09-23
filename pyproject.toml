@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis-efg-benchmark"
+version = "1.0.0"
+description = "Publication-grade, leakage-resistant benchmark for predicting electric-field-gradient (EFG) properties of inorganic crystals"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Materials Informatics Research Team"}
+]
+dependencies = [
+    "torch>=2.2.0",
+    "torch-geometric>=2.5.0",
+    "e3nn>=0.6.0",
+    "jarvis-tools>=2026.6.12",
+    "spglib>=2.5.0",
+    "scikit-learn>=1.3.0",
+    "xgboost>=2.0.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0"
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]
+pythonpath = ["."]

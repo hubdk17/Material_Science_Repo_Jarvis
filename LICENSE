@@ -1,0 +1,42 @@
+COPYRIGHT & STRICT ACADEMIC INTEGRITY NOTICE
+
+Copyright (c) 2026 hubdk17. All Rights Reserved.
+
+================================================================================
+                    RESTRICTED ACADEMIC & RESEARCH LICENSE
+               PROHIBITION OF UNCREDITED COPYING AND PLAGIARISM
+================================================================================
+
+Permission is hereby granted for viewing and academic evaluation purposes only,
+subject to the following mandatory conditions:
+
+1. PROHIBITION OF DIRECT COPYING AND REDISTRIBUTION:
+   No part of this repository—including but not limited to source code, benchmark
+   protocols, split definitions, model architectures, experimental tables, figures,
+   and written documentation—may be copied, reproduced, cloned, mirrored, sold, or
+   redistributed in whole or in part without the prior express written consent of
+   the author.
+
+2. ACADEMIC INTEGRITY & ANTI-PLAGIARISM:
+   This codebase and benchmark were developed as original scientific research.
+   Submitting this work, whether modified or verbatim, as one's own coursework,
+   dissertation, thesis, competition entry, technical assessment, or academic paper
+   without proper attribution constitutes academic dishonesty, plagiarism, and a
+   violation of university and professional codes of conduct.
+
+3. MANDATORY ATTRIBUTION:
+   Any scientific paper, technical report, or software benchmark derived from or
+   referencing this work must explicitly cite this repository and its associated
+   publications as specified in the CITATION.cff file.
+
+4. NO COMMERCIAL EXPLOITATION:
+   Commercial use, including model training for proprietary closed products,
+   commercial benchmarking services, or patent filings derived from these
+   implementations, is strictly prohibited without a separate commercial agreement.
+
+THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

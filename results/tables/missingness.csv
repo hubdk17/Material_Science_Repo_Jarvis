@@ -1,0 +1,6 @@
+check,count,status
+Missing / Null JSON records,0,PASS
+NaN or Infinite values,0,PASS
+Singular / Invertible Lattices,0,PASS
+Site count mismatches (elements vs coords vs tensors),0,PASS
+Duplicate JARVIS IDs,0,PASS

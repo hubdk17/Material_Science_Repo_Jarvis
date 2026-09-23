@@ -1,0 +1,56 @@
+benchmark_name: "site_resolved_efg_tensor"
+split_files:
+  dev: "splits/tensor_development_split.json"
+  fold_0: "splits/tensor_grouped_fold_0.json"
+  fold_1: "splits/tensor_grouped_fold_1.json"
+  fold_2: "splits/tensor_grouped_fold_2.json"
+  fold_3: "splits/tensor_grouped_fold_3.json"
+  fold_4: "splits/tensor_grouped_fold_4.json"
+
+target_projection: "symmetric_traceless"
+
+training:
+  batch_size: 32
+  lr: 0.001
+  min_lr: 1e-6
+  weight_decay: 1e-5
+  epochs: 50
+  early_stopping_patience: 12
+  grad_clip_norm: 5.0
+  loss: "frobenius"
+
+models:
+  B0_zero:
+    description: "Global zero tensor predictor"
+
+  B1_element_mean:
+    description: "Element-wise isotropic mean tensor"
+
+  B2_local_mlp:
+    hidden_dim: 128
+    num_layers: 3
+    dropout: 0.1
+
+  B3_invariant_unconstrained:
+    node_dim: 64
+    hidden_dim: 128
+    num_layers: 4
+    output_dim: 6
+
+  B4_invariant_symmetric_traceless:
+    node_dim: 64
+    hidden_dim: 128
+    num_layers: 4
+    output_dim: 5
+
+  B5_equivariant_e3nn:
+    irreps_node_input: "64x0e"
+    irreps_node_hidden: "32x0e + 16x1o + 8x2e"
+    irreps_output: "1x2e"
+    num_layers: 3
+    radius_cutoff: 5.0
+    num_neighbors: 16
+
+  B6_equivariant_site_symmetry:
+    base_model: "B5_equivariant_e3nn"
+    apply_site_symmetry: true

@@ -1,0 +1,5 @@
+model,task,expected_symmetry,tested_metric,max_error,mean_error,tolerance,passed
+ALIGNN (Scalar),Task A: Scalar Max-EFG,SO(3) Invariant,Max |f(RX) - f(X)|,1.6391277313232422e-07,3.058463335037232e-08,0.001,True
+CGCNN (Scalar),Task A: Scalar Max-EFG,SO(3) Invariant,Max |f(RX) - f(X)|,7.62939453125e-06,1.8358230590820313e-06,0.001,True
+Invariant GNN (B4),Task B: Site Tensor,Non-covariant (Control),Max ||V(RX) - R V(X) R^T||_F,1.0413739681243896,0.4739960588514805,0.0001,False
+Equivariant GNN (B5),Task B: Site Tensor,SO(3) Equivariant,Max ||V(RX) - R V(X) R^T||_F,3.2016373552323785e-07,1.168996847411563e-07,0.0001,True

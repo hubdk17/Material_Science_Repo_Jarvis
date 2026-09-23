@@ -1,0 +1,47 @@
+benchmark_name: "dft_3d_max_efg"
+split_file: "splits/official_jarvis_scalar.json"
+
+models:
+  A0_median:
+    strategy: "median"
+
+  A1_magpie_rf:
+    n_estimators: 100
+    max_depth: 15
+    random_state: 42
+
+  A2_magpie_xgb:
+    n_estimators: 200
+    learning_rate: 0.05
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+
+  A3_structural_gbdt:
+    n_estimators: 200
+    learning_rate: 0.05
+    max_depth: 6
+    random_state: 42
+
+  A4_cgcnn:
+    atom_fea_len: 64
+    n_conv: 4
+    h_fea_len: 128
+    n_h: 2
+    lr: 0.001
+    weight_decay: 1e-5
+    batch_size: 64
+    epochs: 60
+    early_stopping_patience: 15
+
+  A5_alignn_eq:
+    node_dim: 64
+    edge_dim: 64
+    triplet_dim: 32
+    num_layers: 4
+    lr: 0.001
+    weight_decay: 1e-5
+    batch_size: 64
+    epochs: 60
+    early_stopping_patience: 15
