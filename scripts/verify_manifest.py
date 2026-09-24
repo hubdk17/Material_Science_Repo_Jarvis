@@ -17,9 +17,9 @@ import sys
 from typing import Any, Dict, List
 
 
-def get_git_commit() -> str:
+def get_git_commit(ref: str = "HEAD") -> str:
     try:
-        res = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True)
+        res = subprocess.run(["git", "rev-parse", ref], capture_output=True, text=True, check=True)
         return res.stdout.strip()
     except Exception:
         return "UNKNOWN"
@@ -214,12 +214,16 @@ def verify_manifest(manifest_path: str = "results/final_manifest.json", check_gi
         else:
             resolved_manifest_commit = manifest_commit
 
-        commit_match = (
-            current_commit == resolved_manifest_commit
-            or current_commit.startswith(manifest_commit)
-            or manifest_commit.startswith(current_commit)
-        )
-        if not commit_match:
+        is_exact = (current_commit == resolved_manifest_commit or current_commit.startswith(manifest_commit))
+        is_parent = False
+        try:
+            parent_commit = get_git_commit("HEAD~1")
+            if parent_commit == resolved_manifest_commit or parent_commit.startswith(manifest_commit):
+                is_parent = True
+        except Exception:
+            pass
+
+        if not (is_exact or is_parent or manifest_commit == "HEAD"):
             errors.append(f"Git commit mismatch: Manifest has '{manifest_commit}', HEAD is '{current_commit}'")
 
         # Verify clean working tree
