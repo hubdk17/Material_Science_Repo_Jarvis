@@ -76,8 +76,8 @@ def build_artifact_record(
     }
 
 
-def generate_manifest(manifest_path: str = "results/final_manifest.json") -> Dict[str, Any]:
-    git_commit = get_git_commit()
+def generate_manifest(manifest_path: str = "results/final_manifest.json", commit_tag: str = "HEAD") -> Dict[str, Any]:
+    git_commit = commit_tag
     timestamp_str = datetime.now(timezone.utc).isoformat()
 
     raw_efg = "data/raw/JARVIS-EFG4.json"

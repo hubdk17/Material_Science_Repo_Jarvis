@@ -1,12 +1,12 @@
 {
   "manifest_version": "1.0.0",
-  "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
-  "generation_timestamp": "2026-09-24T08:33:21.395455+00:00",
+  "git_commit": "HEAD",
+  "generation_timestamp": "2026-09-24T08:34:33.747356+00:00",
   "num_artifacts": 59,
   "artifacts": [
     {
       "relative_path": "data/raw/JARVIS-EFG4.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
       "file_size_bytes": 18600334,
       "generation_command": "curl / download from figshare DOI 10.6084/m9.figshare.12307700.v2",
@@ -20,7 +20,7 @@
     },
     {
       "relative_path": "splits/official_jarvis_scalar.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a",
       "file_size_bytes": 920749,
       "generation_command": "python scripts/02_create_splits.py",
@@ -36,7 +36,7 @@
     },
     {
       "relative_path": "splits/split_manifest.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "88ca3d36bf5b8efeee6e33640e545311488f9071cf811d6daa9598f8f8d7bd74",
       "file_size_bytes": 3806,
       "generation_command": "python scripts/02_create_splits.py",
@@ -52,7 +52,7 @@
     },
     {
       "relative_path": "splits/tensor_development_split.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "de0b159e806a95a3fe13fd206b2ffc48c44c3e296575f41ceb72feb5cc6795ef",
       "file_size_bytes": 666235,
       "generation_command": "python scripts/02_create_splits.py",
@@ -68,7 +68,7 @@
     },
     {
       "relative_path": "splits/tensor_grouped_fold_0.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "deb34175cd984462336d58684f885154e2d11f04d9b062a415d3e124a6a3c426",
       "file_size_bytes": 666243,
       "generation_command": "python scripts/02_create_splits.py",
@@ -84,7 +84,7 @@
     },
     {
       "relative_path": "splits/tensor_grouped_fold_1.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "04774d9674fcc21464792fca785fc331632b8b93321c89aa694b9ce005ea3c88",
       "file_size_bytes": 666255,
       "generation_command": "python scripts/02_create_splits.py",
@@ -100,7 +100,7 @@
     },
     {
       "relative_path": "splits/tensor_grouped_fold_2.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "103a3af7419cbbb5c2702190662aea0cbdcdbd1e4f1b9bf559f2c031d2c1a6b8",
       "file_size_bytes": 666225,
       "generation_command": "python scripts/02_create_splits.py",
@@ -116,7 +116,7 @@
     },
     {
       "relative_path": "splits/tensor_grouped_fold_3.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "cc6797060fff7f48ee9e36da8c5423b916f0d5b63759bd1ef00dbe54009f0a23",
       "file_size_bytes": 666247,
       "generation_command": "python scripts/02_create_splits.py",
@@ -132,7 +132,7 @@
     },
     {
       "relative_path": "splits/tensor_grouped_fold_4.json",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "cb8ecf27353b3502d80a859f90e6c87ca205edec409072b57782d997fa4dd430",
       "file_size_bytes": 666257,
       "generation_command": "python scripts/02_create_splits.py",
@@ -148,7 +148,7 @@
     },
     {
       "relative_path": "results/checkpoints/dev_split/B2_ridge.joblib",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "ecd7175f1043f0cfbbbc795568ceaa0f7879be5ca9b3ac4d70ba18b24a4a1a7e",
       "file_size_bytes": 779,
       "generation_command": "python scripts/train_dev_models.py",
@@ -165,7 +165,7 @@
     },
     {
       "relative_path": "results/checkpoints/dev_split/B2_scaler.joblib",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "899309b05b6c88902e1ce01d88c8a468ac64d47fb55381e65e0a0534a7f876d4",
       "file_size_bytes": 823,
       "generation_command": "python scripts/train_dev_models.py",
@@ -182,7 +182,7 @@
     },
     {
       "relative_path": "results/checkpoints/dev_split/B4_invariant.pt",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "c864227be71445c4f5df25af750d3d8af4da36bb57a2e323e859807d79f7217c",
       "file_size_bytes": 1064629,
       "generation_command": "python scripts/train_dev_models.py",
@@ -199,7 +199,7 @@
     },
     {
       "relative_path": "results/checkpoints/dev_split/B5_equivariant.pt",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "30d5f135555b8656c2f2aadd176a8f263279f1d5de83dee904a1833fc1ccc2e3",
       "file_size_bytes": 2793673,
       "generation_command": "python scripts/train_dev_models.py",
@@ -216,7 +216,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B0_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "a6cde1180aa4936e011a86c1de7f232bc0b592d0af05cd544a16de02720be986",
       "file_size_bytes": 574126,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -234,7 +234,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B0_zero_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "99c8b0f5f0a31e97924e57641e68dd05df7949d3331674977e18bdb93371edc5",
       "file_size_bytes": 1815710,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -252,7 +252,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B1_element_mean_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "2e858fab7529cc30dd6fe2fe343b83c72a4203e3ef610a47b0f56685e452e5c4",
       "file_size_bytes": 3223265,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -270,7 +270,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B1_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "f2b5b3582175cc6b45b35f593ef48f2aebaaea6ce9e7761d4048ad27ead7c287",
       "file_size_bytes": 659708,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -288,7 +288,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B2_local_ridge_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "ed91799663f28136acb72676dc08c17a96895dcb5f163ab6f9ce32ffe2424385",
       "file_size_bytes": 3398374,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -306,7 +306,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B2_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "9b082b078ea87aae63a394e09190b4a65c0d978f30c134de9ff390cc085746da",
       "file_size_bytes": 661389,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -324,7 +324,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B2_predictions_tensors.npy",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "f179ecc34da4593adabc37027d213e4cfc5cc9f30a0067f7b7f4080cf40fff3f",
       "file_size_bytes": 512228,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -342,7 +342,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B3_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "ae03b714925e5a0143e76fe71fad7d38124552652c06e20ba30c8ddfc15c4f6f",
       "file_size_bytes": 681700,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -360,7 +360,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B4_invariant_projected_5d_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "b7dbcbcd9c90e605fb0969b58ef4eac4a41623a6ba2bac1aeefcace4dba9222d",
       "file_size_bytes": 3648405,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -378,7 +378,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B4_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "652a1489b583038f6d7f5255ad047983ab75bf9e621dd1424a9512b6e00142c3",
       "file_size_bytes": 674927,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -396,7 +396,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B4_predictions_tensors.npy",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "d8e456e789b921f3b309fda51a84646be544bd330e1f37ffefeb0af9fb37a40c",
       "file_size_bytes": 512228,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -414,7 +414,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B5_equivariant_e3nn_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "fd31a54800b545822b143326debd5443dff05731847255d8223076f61886b3a7",
       "file_size_bytes": 3474285,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -432,7 +432,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B5_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "e08bc49ba1e29369a499eb7adf53c32faae9e541df792b83cf2d7923303362f6",
       "file_size_bytes": 664356,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -450,7 +450,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B5_predictions_tensors.npy",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "1f5ea3f349395526bbf1df85a425eb2ca0e7deb47961156488394f47da56cf86",
       "file_size_bytes": 512228,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -468,7 +468,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B6_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "d39ce5b1fdad95bf35af300f6cc5bdedb0b6c65f2115b98234b097a9e9f65298",
       "file_size_bytes": 650620,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -486,7 +486,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B6_predictions_tensors.npy",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "783c24a065cc241007bef2a74a7f4356df1af4c31e041413c0333b865fc60e30",
       "file_size_bytes": 512228,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -504,7 +504,7 @@
     },
     {
       "relative_path": "results/predictions/tensor/tensor_development_split/B6_symmetry_projected_e3nn_full_predictions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "0419bb82ab1259b0613c5258afcd8d7cc58580020734838230a557eb40c18d24",
       "file_size_bytes": 3389408,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -522,7 +522,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/b5_b6_symmetry_projection_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "f2a80961ecba5d5f979145e525b11395d86a3eb60ea829fb26f1479161a2752a",
       "file_size_bytes": 395,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -539,7 +539,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/b6_site_stabilizer_dimensions.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "9506ccbb59fcffa670335bcc905b36068a6916ac9c09d7aca565a91edd4111b9",
       "file_size_bytes": 1223250,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -556,7 +556,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/cartesian_vs_principal_summary.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "36ad2eb1201efe28c2e42bf292eca96b976eba386931c246215d929e692fecc8",
       "file_size_bytes": 551,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -573,7 +573,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/cartesian_vs_principal_underestimation.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "8fcd05a44462f5f2adf2a8e9c14dd90f18429221f827fdf7a2b3d8d5e77826ed",
       "file_size_bytes": 8784466,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -590,7 +590,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/development_split_corrected_metrics.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "789649d9b039c58160ff3e10d9948597634e385198d8ad8c67c2e23ba007ce5a",
       "file_size_bytes": 1961,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -607,7 +607,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/orientation_angle_audit_100_sites.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "e4d967e53147f8776fb7f21c47df6ce2f40445496500880d5ba2db25d8f0e903",
       "file_size_bytes": 35041,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -624,7 +624,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/outer_fold_crystal_macro_metrics.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "7b3b1a61ed85bfcb4feea495956ab73211724b0d67af4d1eb6bf7331785d1787",
       "file_size_bytes": 2384,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -641,7 +641,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/outer_fold_paired_comparisons.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "50eb768893ac20e1cf29ffac88f14e109e26c4b2c768bcbdfa88e81353054ca4",
       "file_size_bytes": 843,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -658,7 +658,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/outer_fold_site_micro_metrics.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "298b86f8c3a8fcaf3f4979e69d2aa00e42eacb9099876f21e7586c4142919d8a",
       "file_size_bytes": 3214,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -675,7 +675,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/projection_perturbation_distribution.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "00c7db486ca53e7b484598e916c816ccc0c1834f39997f2f69bd50bf8bccd04a",
       "file_size_bytes": 192,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -692,7 +692,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/protocol_a_corrected_metrics.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "a58f94fb70d24b606821b34ab0d0bf50a01de49197d53cfe32a58b74b8084109",
       "file_size_bytes": 2253,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -709,7 +709,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/protocol_a_leaderboard_comparison.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "8bcf1f182099f8789e5670da316ab673628a65b3505243f1a7cf67cb0c356c4a",
       "file_size_bytes": 909,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -726,7 +726,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/protocol_a_top20_mismatches.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "dedc5c91269d786c3bbe67e35659c8dd566b52d7e9e17e23530b3e07755318df",
       "file_size_bytes": 3226,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -743,7 +743,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/protocol_a_units_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "26e1202bdd1195dd7f19d3c390c858aa18209563af4df3e1f4c56ca4223f3531",
       "file_size_bytes": 2314,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -760,7 +760,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/raw_tensor_physics_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "02bdb041a1592bc5f761765a3e2d405c7c3744448d98b1c10e923693fc8df30f",
       "file_size_bytes": 1077,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -777,7 +777,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/rotation_reflection_covariance_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "c2248f8e07b69f5080818a3f59fb70e6570f305345c926cf5b21ced576557415",
       "file_size_bytes": 1614,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -794,7 +794,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/split_distribution_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "fabd1992ec680af6259c34d5170d8256d3ff7422941494261d6a70a65f8ebcb9",
       "file_size_bytes": 3756,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -811,7 +811,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/tensor_metric_validity_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "538a470fae06716fbc50f3d43018d4450ac4391658a22b41f66f7263910e0cc6",
       "file_size_bytes": 570,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -828,7 +828,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/throughput_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "6030b44926d6f3558364ec2c1aa2312c9f0c35f1f76759394a41648a89ec5393",
       "file_size_bytes": 442,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -845,7 +845,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/uncertainty_calibration_metrics.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "89c8c84d449f19ac229ab507dfaffca6f514135095ef62bd7d3f013f9148decc",
       "file_size_bytes": 723,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -862,7 +862,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/wyckoff_rotation_audit.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "300f4b477636ed1c37764e88f2ceadaa302fa46179a072e19748b5a82b304564",
       "file_size_bytes": 20771,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -879,7 +879,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/zero_efg_classification_summary.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "8accda0a6af9f87694478bd0b7b29a03c6013e3826615d854662710189a396d7",
       "file_size_bytes": 308,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -896,7 +896,7 @@
     },
     {
       "relative_path": "results/adversarial_audit_20260924_023600/zero_efg_symmetry_classification.csv",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "b9756b0f13e0159090654263e63de161698feb8765168c07086c2f816c66e06b",
       "file_size_bytes": 584819,
       "generation_command": "python scripts/run_forensic_corrections.py",
@@ -913,7 +913,7 @@
     },
     {
       "relative_path": "results/figures/error_vs_efg_magnitude.png",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "b6f17fbaf7c09f502b02439336f8c7167533998071f4222b790dfdb5c3bc720f",
       "file_size_bytes": 245612,
       "generation_command": "python scripts/06_generate_figures_and_tables.py",
@@ -929,7 +929,7 @@
     },
     {
       "relative_path": "results/figures/rotation_covariance_comparison.png",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "3ec1e5b90f2234fbe203dfd8c0795ebf17e19426d17147fe5e30fdd95991628e",
       "file_size_bytes": 139392,
       "generation_command": "python scripts/06_generate_figures_and_tables.py",
@@ -945,7 +945,7 @@
     },
     {
       "relative_path": "results/figures/scalar_parity_plot.png",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "3c8886138bfce4845eaf59b5e6fe7a9855aa202ef041cafe7a80f46b4cb21ce3",
       "file_size_bytes": 440501,
       "generation_command": "python scripts/06_generate_figures_and_tables.py",
@@ -961,7 +961,7 @@
     },
     {
       "relative_path": "results/figures/tensor_frobenius_comparison.png",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "0ff9028d94232d49bd0f4ed082cc0ba42d6e3d35b59350333051880c12af57c1",
       "file_size_bytes": 191754,
       "generation_command": "python scripts/06_generate_figures_and_tables.py",
@@ -977,7 +977,7 @@
     },
     {
       "relative_path": "results/figures/uncertainty_calibration_plot.png",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "cc5621a20be96c56867970c288dd1ccb49ab34680f32ab3f4dd526225862f8e7",
       "file_size_bytes": 122853,
       "generation_command": "python scripts/06_generate_figures_and_tables.py",
@@ -993,7 +993,7 @@
     },
     {
       "relative_path": "reports/adversarial_audit_report.md",
-      "git_commit": "7354cfd380d3062b6d2d5308b0905564a3452885",
+      "git_commit": "HEAD",
       "sha256": "412f14f1caebeb71e18b7a0cc6078d5b8e314666ae42fec6d1ee72ce84a91937",
       "file_size_bytes": 33536,
       "generation_command": "python scripts/generate_forensic_report.py",
