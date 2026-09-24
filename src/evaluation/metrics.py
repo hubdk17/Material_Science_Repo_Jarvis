@@ -114,17 +114,26 @@ def compute_task_b_tensor_metrics(
 
     # 4. Principal components & eigenvalue metrics
     vzz_errs = []
-    eta_errs = []
     eval_set_errs = []
-    axis_angular_errs = []
 
-    # Track exclusion reasons
+    # Truth-defined common mask tracking
+    common_axis_angular_errs = []
+    intersection_axis_angular_errs = []
+    prediction_valid_orient_count = 0
+    truth_valid_orient_count = 0
+
+    excluded_low_magnitude_true = 0
     excluded_degenerate_true = 0
-    excluded_degenerate_pred = 0
-    excluded_low_magnitude = 0
-    excluded_undefined_b0 = 0
+
+    # Eta tracking
+    truth_valid_eta_count = 0
+    prediction_valid_eta_count = 0
+    eta_errs_common = []
+    eta_errs_conditional = []
 
     is_b0 = bool(np.all(np.abs(V_pred_mat) < 1e-6))
+    tau = 0.05
+    magnitude_threshold = 1.0
 
     for i in range(N):
         Vt = V_true_mat[i]
@@ -143,7 +152,6 @@ def compute_task_b_tensor_metrics(
             vzz_p = 0.0
             eta_p = np.nan
             evals_p = np.zeros(3)
-            excluded_undefined_b0 += 1
         else:
             vxx_p, vyy_p, vzz_p, eta_p = compute_principal_components(Vp)
             evals_p = np.linalg.eigvalsh((Vp + Vp.T) / 2.0)
@@ -155,38 +163,69 @@ def compute_task_b_tensor_metrics(
         # Sorted eigenvalue set error (permutation-invariant set error)
         eval_set_errs.append(float(np.mean(np.abs(np.sort(evals_t) - np.sort(evals_p)))))
 
-        # Asymmetry parameter eta: valid only when |Vzz_true| > 1.0 and |Vzz_pred| > 1.0
-        if not is_b0 and abs(vzz_t) > 1.0 and abs(vzz_p) > 1.0:
-            eta_errs.append(abs(eta_t - eta_p))
+        # --- ETA METRICS (Truth-defined common mask) ---
+        if abs(vzz_t) > magnitude_threshold:
+            truth_valid_eta_count += 1
+            if not is_b0 and abs(vzz_p) > magnitude_threshold:
+                prediction_valid_eta_count += 1
+                err_eta = float(abs(eta_t - eta_p))
+                eta_errs_conditional.append(err_eta)
+                eta_errs_common.append(err_eta)
+            elif not is_b0:
+                # Prediction failed to predict significant Vzz: assign capped error (maximum eta error = 1.0)
+                eta_errs_common.append(1.0)
 
-        # Principal-axis angular error with scale-aware degeneracy check
-        if is_b0:
+        # --- ORIENTATION METRICS ---
+        # 1. Truth-defined eligibility check
+        if frob_t < magnitude_threshold:
+            excluded_low_magnitude_true += 1
             continue
 
-        if frob_t < 1.0 or frob_p < 1.0:
-            excluded_low_magnitude += 1
-            continue
-
-        # Scale-aware relative gap: min(|lam_3| - |lam_2|, |lam_2| - |lam_1|) / ||V||_F
         gap_t = (np.abs(lam_t[2]) - np.abs(lam_t[1])) / max(frob_t, 1e-6)
-        gap_p = (np.abs(lam_p[2]) - np.abs(lam_p[1])) / max(frob_p, 1e-6)
-
-        tau = 0.05  # Scale-aware non-degeneracy threshold
         if gap_t <= tau:
             excluded_degenerate_true += 1
             continue
-        if gap_p <= tau:
-            excluded_degenerate_pred += 1
+
+        truth_valid_orient_count += 1
+
+        if is_b0:
+            # B0 has no unique eigenvectors; undefined on common mask
             continue
 
+        # Extract true principal axis (eigenvector of largest absolute eigenvalue)
         _, evecs_t = np.linalg.eigh((Vt + Vt.T) / 2.0)
-        _, evecs_p = np.linalg.eigh((Vp + Vp.T) / 2.0)
         z_axis_t = evecs_t[:, ord_t[2]]
+
+        # Extract predicted principal axis
+        _, evecs_p = np.linalg.eigh((Vp + Vp.T) / 2.0)
         z_axis_p = evecs_p[:, ord_p[2]]
 
-        # Angle between undirected axes: cos(theta) = |u . v|
-        cos_theta = np.clip(abs(np.dot(z_axis_t, z_axis_p)), 0.0, 1.0)
-        axis_angular_errs.append(float(np.degrees(np.arccos(cos_theta))))
+        # Primary metric: Truth-defined common mask orientation error
+        cos_theta = np.clip(abs(float(np.dot(z_axis_t, z_axis_p))), 0.0, 1.0)
+        angle_deg = float(np.degrees(np.arccos(cos_theta)))
+        common_axis_angular_errs.append(angle_deg)
+
+        # Check prediction validity on this truth-valid site
+        gap_p = (np.abs(lam_p[2]) - np.abs(lam_p[1])) / max(frob_p, 1e-6)
+        if frob_p >= magnitude_threshold and gap_p > tau:
+            prediction_valid_orient_count += 1
+            intersection_axis_angular_errs.append(angle_deg)
+
+    # Orientation metrics on primary truth-defined common mask
+    has_common = len(common_axis_angular_errs) > 0
+    common_mean = float(np.mean(common_axis_angular_errs)) if (has_common and not is_b0) else np.nan
+    common_median = float(np.median(common_axis_angular_errs)) if (has_common and not is_b0) else np.nan
+    common_p90 = float(np.percentile(common_axis_angular_errs, 90)) if (has_common and not is_b0) else np.nan
+
+    # Secondary intersection metrics
+    has_inter = len(intersection_axis_angular_errs) > 0
+    inter_mean = float(np.mean(intersection_axis_angular_errs)) if (has_inter and not is_b0) else np.nan
+
+    pred_valid_rate = float(prediction_valid_orient_count / truth_valid_orient_count) if (truth_valid_orient_count > 0 and not is_b0) else 0.0
+    eta_coverage_rate = float(prediction_valid_eta_count / truth_valid_eta_count) if (truth_valid_eta_count > 0 and not is_b0) else 0.0
+
+    eta_mae_final = float(np.mean(eta_errs_common)) if (len(eta_errs_common) > 0 and not is_b0) else np.nan
+    eta_cond_mae_final = float(np.mean(eta_errs_conditional)) if (len(eta_errs_conditional) > 0 and not is_b0) else np.nan
 
     return {
         "frobenius_error_mean": mean_frob,
@@ -196,18 +235,25 @@ def compute_task_b_tensor_metrics(
         "mean_symmetry_residual": mean_sym_residual,
         "mean_trace_residual": mean_trace_residual,
         "largest_principal_vzz_mae": float(np.mean(vzz_errs)) if vzz_errs else 0.0,
-        "asymmetry_eta_mae": float(np.mean(eta_errs)) if eta_errs else np.nan,
+        "asymmetry_eta_mae": eta_mae_final,
+        "asymmetry_eta_conditional_mae": eta_cond_mae_final,
+        "eta_coverage_rate": eta_coverage_rate,
+        "truth_valid_eta_count": truth_valid_eta_count,
+        "prediction_valid_eta_count": prediction_valid_eta_count,
+        "valid_eta_count": prediction_valid_eta_count if not is_b0 else 0,
         "eigenvalue_set_mae": float(np.mean(eval_set_errs)) if eval_set_errs else 0.0,
-        "principal_axis_angle_mean_deg": float(np.mean(axis_angular_errs)) if axis_angular_errs else np.nan,
-        "principal_axis_angle_median_deg": float(np.median(axis_angular_errs)) if axis_angular_errs else np.nan,
-        "principal_axis_angle_p90_deg": float(np.percentile(axis_angular_errs, 90)) if axis_angular_errs else np.nan,
-        "valid_eta_count": len(eta_errs),
-        "valid_orientation_count": len(axis_angular_errs),
-        "excluded_orientation_count": N - len(axis_angular_errs),
+        "principal_axis_angle_mean_deg": common_mean,
+        "principal_axis_angle_median_deg": common_median,
+        "principal_axis_angle_p90_deg": common_p90,
+        "common_valid_site_count": truth_valid_orient_count,
+        "model_evaluated_site_count": len(common_axis_angular_errs) if not is_b0 else 0,
+        "valid_orientation_count": len(intersection_axis_angular_errs) if not is_b0 else 0,
+        "prediction_validity_rate": pred_valid_rate,
+        "intersection_axis_angle_mean_deg": inter_mean,
+        "intersection_valid_site_count": len(intersection_axis_angular_errs) if not is_b0 else 0,
+        "excluded_low_magnitude_true": excluded_low_magnitude_true,
         "excluded_degenerate_true": excluded_degenerate_true,
-        "excluded_degenerate_pred": excluded_degenerate_pred,
-        "excluded_low_magnitude": excluded_low_magnitude,
-        "excluded_undefined_b0": excluded_undefined_b0
+        "is_b0": is_b0
     }
 
 

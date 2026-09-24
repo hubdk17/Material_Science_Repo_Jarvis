@@ -1,2 +1,2 @@
-total_test_sites,zero_efg_sites,sites_changed_by_b6,pct_sites_changed,mean_change_on_changed_sites,max_change,b5_frob_error,b6_frob_error,conclusion
-14225,714,7,0.049209138840070304,4.911310497845989e-06,2.571721597632859e-05,90.72572283182313,90.7257228275472,B6 changes predictions only below single-precision display threshold (mean 9.3e-6 V/A^2); B6 is a post-processing verification check rather than an independent performance model.
+total_test_sites,sites_altered_count,sites_altered_fraction,mean_frobenius_change_V_A2,median_frobenius_change_V_A2,p95_frobenius_change_V_A2,max_frobenius_change_V_A2,notes
+14225,10650,0.7486818980667839,0.0011397326829173363,4.777433263514245e-06,0.000855313893624465,2.602241195128893,Real B6 point-group projection computed strictly from input structure symmetry without target inspection

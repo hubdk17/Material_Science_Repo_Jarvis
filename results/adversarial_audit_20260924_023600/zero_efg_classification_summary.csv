@@ -1,0 +1,4 @@
+category,count,mean_frob_norm,max_frob_norm,mean_stabilizer_order
+symmetry_forced_exact_zero,5225,0.0,0.0,44.89033492822966
+symmetry_forced_near_zero,479,0.006814550417053131,0.0783836717690617,44.693110647181626
+numerical_near_zero_unforced,3195,0.42732851088463103,0.9993918150555366,7.658215962441314

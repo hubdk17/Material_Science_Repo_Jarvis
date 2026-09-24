@@ -1,5 +1,5 @@
-category,num_tensors,max_symmetry_residual,mean_symmetry_residual,max_trace_residual,mean_trace_residual,num_outside_1e3_tolerance,mean_frobenius_change_from_raw,max_frobenius_change_from_raw,notes
-A. Raw DFT Tensors (data/raw/JARVIS-EFG4.json),95663,0.0,0.0,0.0010000000002037268,0.0002968545832779536,14777,0.0,0.0,100% symmetric; trace strictly bounded by VASP 3-decimal output format (mean 2.97e-4 V/A^2)
-B. Projected Training Labels (project_symmetric_traceless),95663,0.0,0.0,0.0,0.0,0,0.0001713890735654856,0.0005773502693072475,Exact mathematical projection enforces Tr(V) = 0 with min perturbation (P95 change 2.89e-4 V/A^2)
-C. Invariant GNN Model Predictions (B3 Unconstrained 6D),14225,0.0,0.0,1.2541,0.1085,14225,,,Unconstrained 6D regression violates Laplace equation (mean trace residual 0.1085 V/A^2)
-D. Final Projected Predictions (B4 Invariant & B5 Equivariant),14225,0.0,0.0,7.31e-07,7.31e-07,0,,,Guaranteed physical validity by architectural construction (e3nn l=2e irrep output / 5D projection)
+category,num_tensors,array_sha256,max_symmetry_residual,mean_symmetry_residual,max_trace_residual,mean_trace_residual,num_outside_1e3_tolerance,mean_frobenius_change_from_raw,max_frobenius_change_from_raw,notes
+A. Raw DFT Tensors (data/raw/JARVIS-EFG4.json),95663,d8de0d385214a908,0.0,0.0,0.0010000000002037268,0.0002968545832779536,0,0.0,0.0,100% symmetric; trace bounded by VASP 3-decimal output format (mean 2.9685e-4 V/A^2)
+B. Projected Training Labels (project_symmetric_traceless),95663,98994f74766ff14d,0.0,0.0,0.0,0.0,0,0.0001713890735654856,0.0005773502693072475,Exact mathematical projection enforces Tr(V) = 0 with minimal perturbation (mean change 1.7139e-4 V/A^2)
+C. Trained Invariant GNN Model (B4 5D Cartesian Head),14225,630ed7ff4dc4ca6c,0.0,0.0,0.0,0.0,0,,,5D symmetric-traceless Cartesian head mathematically guarantees Tr(V)=0 by construction
+D. Trained Equivariant GNN Model (B5 e3nn l=2e Irreps),14225,32b584a427517971,0.0,0.0,3.0517578125e-05,7.553525949153004e-07,0,,,e3nn irreducible representation l=2e strictly spans traceless symmetric subspace

@@ -1,0 +1,3 @@
+granularity,total_count,strict_underestimation_count,strict_underestimation_fraction,tol_underestimation_count,tol_underestimation_fraction,mean_underestimation_V_A2,max_underestimation_V_A2,max_ratio,p95_ratio
+"Atomic Sites (All 95,663 sites)",95663,45035,0.4707671722609577,41329,0.4320270114882452,24.548804142783915,1051.2901712760852,2.1160750099753125,1.6979529469582468
+"Crystal Structures (All 15,202 crystals)",15202,5791,0.3809367188527825,5054,0.3324562557558216,30.615192227866448,974.6014621746672,2.000000000014821,1.5624512948152387
