@@ -8,7 +8,7 @@ Usage:
 import argparse
 from pathlib import Path
 import sys
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -105,7 +105,15 @@ def main():
         for k, v in res.items():
             print(f"{k}: {v}")
     else:
-        parser.print_help()
+        default_pred = Path("results/predictions/tensor/tensor_development_split/B5_equivariant_e3nn_full_predictions.csv")
+        if default_pred.exists():
+            print(f"No arguments provided. Evaluating default model: {default_pred}")
+            res = evaluate_prediction_file(default_pred)
+            print(f"=== Evaluation Results for {default_pred} ===")
+            for k, v in res.items():
+                print(f"{k}: {v}")
+        else:
+            parser.print_help()
 
 
 if __name__ == "__main__":
