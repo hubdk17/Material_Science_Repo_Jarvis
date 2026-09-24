@@ -1,5 +1,5 @@
-nominal_coverage,val_id_empirical_coverage,test_ood_empirical_coverage,low_efg_coverage,medium_efg_coverage,high_efg_coverage,mean_interval_width_V_A2,calibration_status
-0.5,0.48,0.46,0.51,0.47,0.44,45.0,Empirically evaluated using validation residual quantiles
-0.8,0.78,0.76,0.81,0.77,0.74,72.0,Empirically evaluated using validation residual quantiles
-0.9,0.88,0.86,0.91,0.87,0.8400000000000001,81.0,Empirically evaluated using validation residual quantiles
-0.95,0.9299999999999999,0.9099999999999999,0.96,0.9199999999999999,0.8899999999999999,85.5,Empirically evaluated using validation residual quantiles
+nominal_coverage,val_id_empirical_coverage,test_ood_empirical_coverage,low_efg_coverage,medium_efg_coverage,high_efg_coverage,calibration_radius_q_val_V_A2,mean_interval_width_V_A2,calibration_status
+0.5,0.5,0.500527,0.829329,0.609396,0.265344,33.664373,67.328746,Conformal quantile radius calibrated on validation split only
+0.8,0.800014,0.826011,0.983775,0.960626,0.656947,93.54647,187.092941,Conformal quantile radius calibrated on validation split only
+0.9,0.899972,0.914025,0.998752,0.991946,0.819389,155.809713,311.619426,Conformal quantile radius calibrated on validation split only
+0.95,0.949986,0.95304,1.0,0.997315,0.899847,258.717048,517.434096,Conformal quantile radius calibrated on validation split only
