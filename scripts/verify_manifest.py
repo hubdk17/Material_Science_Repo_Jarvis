@@ -174,6 +174,40 @@ def generate_manifest(manifest_path: str = "results/final_manifest.json", commit
             git_commit
         ))
 
+    # 8. Scalar Leaderboard Tables, Predictions & Checkpoints
+    scalar_table = Path("results/tables/scalar_baselines.csv")
+    if scalar_table.exists():
+        artifacts.append(build_artifact_record(
+            scalar_table.as_posix(),
+            "python scripts/compute_optimal_ensemble.py",
+            "scripts/compute_optimal_ensemble.py",
+            [raw_efg, "splits/official_jarvis_scalar.json"],
+            git_commit
+        ))
+
+    scalar_pred_dir = Path("results/predictions/scalar")
+    if scalar_pred_dir.exists():
+        for sp_f in sorted(scalar_pred_dir.glob("*.csv")):
+            artifacts.append(build_artifact_record(
+                sp_f.as_posix(),
+                "python scripts/compute_optimal_ensemble.py",
+                "scripts/compute_optimal_ensemble.py",
+                [raw_efg, "splits/official_jarvis_scalar.json"],
+                git_commit
+            ))
+
+    scalar_ckpt_dir = Path("results/checkpoints/scalar")
+    if scalar_ckpt_dir.exists():
+        for ckpt_f in sorted(scalar_ckpt_dir.glob("*.pt")):
+            artifacts.append(build_artifact_record(
+                ckpt_f.as_posix(),
+                "python scripts/train_adaptive_quadrupole_gnn.py",
+                "scripts/train_adaptive_quadrupole_gnn.py",
+                [raw_efg, "splits/official_jarvis_scalar.json"],
+                git_commit,
+                ckpt_hash=get_file_sha256(ckpt_f)[:12]
+            ))
+
     manifest = {
         "manifest_version": "1.0.0",
         "git_commit": git_commit,

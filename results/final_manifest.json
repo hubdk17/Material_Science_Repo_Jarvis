@@ -1,8 +1,8 @@
 {
   "manifest_version": "1.0.0",
   "git_commit": "HEAD",
-  "generation_timestamp": "2026-09-24T08:34:33.747356+00:00",
-  "num_artifacts": 59,
+  "generation_timestamp": "2026-09-24T12:04:39.997323+00:00",
+  "num_artifacts": 82,
   "artifacts": [
     {
       "relative_path": "data/raw/JARVIS-EFG4.json",
@@ -994,7 +994,7 @@
     {
       "relative_path": "reports/adversarial_audit_report.md",
       "git_commit": "HEAD",
-      "sha256": "412f14f1caebeb71e18b7a0cc6078d5b8e314666ae42fec6d1ee72ce84a91937",
+      "sha256": "616dcac67d5ca589d526189b324dca2ac534d57efc928f01518abde5ff40fa6a",
       "file_size_bytes": 33536,
       "generation_command": "python scripts/generate_forensic_report.py",
       "generating_script": "scripts/generate_forensic_report.py",
@@ -1027,7 +1027,398 @@
       "checkpoint_hash": "N/A",
       "split_hash": "N/A",
       "seed": 42,
-      "creation_timestamp": "2026-09-24T08:33:21.106397+00:00"
+      "creation_timestamp": "2026-09-24T12:02:44.081858+00:00"
+    },
+    {
+      "relative_path": "results/tables/scalar_baselines.csv",
+      "git_commit": "HEAD",
+      "sha256": "530c59aa546e63bfa53e594ca836e5cc8cbf1621a99dcb1c5b1d0f7aa899884f",
+      "file_size_bytes": 2634,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T12:02:13.688122+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A0_median.csv",
+      "git_commit": "HEAD",
+      "sha256": "cfde469970cb695860351dfc960fd50c4f19e2b3c0e537210c1970f7c38485d9",
+      "file_size_bytes": 29314,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T19:58:02.601809+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A1_magpie_rf.csv",
+      "git_commit": "HEAD",
+      "sha256": "4405b60419b77d303cc8864958000099929fd89e754aadb81bca2f7e20774b61",
+      "file_size_bytes": 45020,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T19:58:08.622104+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A2_magpie_xgb.csv",
+      "git_commit": "HEAD",
+      "sha256": "987cbef062c63453640bfa55318cdd28d3eda5b6eb040a670d517015738a4f76",
+      "file_size_bytes": 34687,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T19:58:12.175439+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A3_structural_gbdt.csv",
+      "git_commit": "HEAD",
+      "sha256": "eaa9d4982f9e99507be07fa1a346f98dd45fd44940ad908bca8a0f688866b645",
+      "file_size_bytes": 45045,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T19:58:16.955219+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A4_cgcnn.csv",
+      "git_commit": "HEAD",
+      "sha256": "bf2dfaf73237cf0fdcf66feb392486a403d6fadd8dbb921f9edc053f44398899",
+      "file_size_bytes": 34933,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T20:01:56.722409+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A5_alignn_eq.csv",
+      "git_commit": "HEAD",
+      "sha256": "1499e7a0bedf509f76396551d8297e1dccc0c9925244ca7f742ffe45db335d8d",
+      "file_size_bytes": 34934,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-23T20:06:04.818149+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn.csv",
+      "git_commit": "HEAD",
+      "sha256": "6f01259eb044f5f1458187804b74854d7d8eceab59e95ca3239066e48a86d97c",
+      "file_size_bytes": 35186,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T09:44:59.594158+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed43.csv",
+      "git_commit": "HEAD",
+      "sha256": "be3b605e1b9b57bba8bd03582e857e37f3c7d7c8cb98a238cb2386b0777a95eb",
+      "file_size_bytes": 35108,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T09:58:47.310063+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed44.csv",
+      "git_commit": "HEAD",
+      "sha256": "92ab8e1dbd29851664d58093baa540ed729b49c37117da37e9744db3ce632cba",
+      "file_size_bytes": 35114,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:13:16.211818+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed45.csv",
+      "git_commit": "HEAD",
+      "sha256": "668e461cdfc3d682f053be00938eb221d731694e0f8b73229a3e979ed85935db",
+      "file_size_bytes": 35104,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:27:33.380417+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed46.csv",
+      "git_commit": "HEAD",
+      "sha256": "570ec1754fbc20adf4e65a9bea66416d0aa36bbaad6cc156780f8dd5256f5b4b",
+      "file_size_bytes": 35061,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:44:22.106626+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed47_boltz.csv",
+      "git_commit": "HEAD",
+      "sha256": "fd9c2cedb57700e2369acd68ce8f6663684d285ab3a1d2376f1c9df8c49983a8",
+      "file_size_bytes": 35102,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T11:18:37.914922+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A6_aq_gnn_seed48.csv",
+      "git_commit": "HEAD",
+      "sha256": "46a794dadca6a48e0f91cb2adcda4096e595de37b7dc7c9374efe8e242404409",
+      "file_size_bytes": 35002,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T11:42:15.519156+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A7_aq_gnn_ensemble.csv",
+      "git_commit": "HEAD",
+      "sha256": "e3d8e9e8e37987cd4a06312a6fabb35f32713c7203e2bd75196d420edea19ebb",
+      "file_size_bytes": 41387,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T11:42:15.622851+00:00"
+    },
+    {
+      "relative_path": "results/predictions/scalar/A7_aq_gnn_optimal_ensemble.csv",
+      "git_commit": "HEAD",
+      "sha256": "53ad5b5e979353c6b9c60229e9383e1a2c74387441e635b97346d4f912121440",
+      "file_size_bytes": 45328,
+      "generation_command": "python scripts/compute_optimal_ensemble.py",
+      "generating_script": "scripts/compute_optimal_ensemble.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "N/A",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T12:01:55.265599+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_best.pt",
+      "git_commit": "HEAD",
+      "sha256": "32d9088c10ced1e57ace611ea4c50ca5803c0078afa93e486747e19762fe884f",
+      "file_size_bytes": 4391415,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "32d9088c10ce",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T09:42:46.281418+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed43.pt",
+      "git_commit": "HEAD",
+      "sha256": "2e1db3108feb1636486cf98d38ce06b3e6ff083a27a1b1ec709c98c5c2d4dfca",
+      "file_size_bytes": 4391651,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "2e1db3108feb",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T09:56:14.491940+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed44.pt",
+      "git_commit": "HEAD",
+      "sha256": "0dcc6c9a9bf2f07d9babfc02f8627d3e93559797a6d53337b405bb491c09b4c7",
+      "file_size_bytes": 4391651,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "0dcc6c9a9bf2",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:12:00.920457+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed45.pt",
+      "git_commit": "HEAD",
+      "sha256": "33dc21388d18cff3f24db3c44ceee95fa13e1562e1d2165081794ea917117cee",
+      "file_size_bytes": 4391651,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "33dc21388d18",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:27:32.794887+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed46.pt",
+      "git_commit": "HEAD",
+      "sha256": "e1d7a34bde0d798ceb1aeb75c934779f2dbb926c42a08a695ee9e0d60a32fd71",
+      "file_size_bytes": 4391651,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "e1d7a34bde0d",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T10:42:25.500270+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed47_boltz.pt",
+      "git_commit": "HEAD",
+      "sha256": "706287dfffded51e79f89cf20dacbeb5716214a3cee979ca9e8fdd1639ef9c5a",
+      "file_size_bytes": 5520999,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "706287dfffde",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T11:15:32.568122+00:00"
+    },
+    {
+      "relative_path": "results/checkpoints/scalar/AQ_GNN_seed48.pt",
+      "git_commit": "HEAD",
+      "sha256": "3be3ec79600267a495ff5d78254b2d362621e0ac79223334381384410a3d050e",
+      "file_size_bytes": 5520291,
+      "generation_command": "python scripts/train_adaptive_quadrupole_gnn.py",
+      "generating_script": "scripts/train_adaptive_quadrupole_gnn.py",
+      "configuration_path": "N/A",
+      "input_file_hashes": {
+        "data/raw/JARVIS-EFG4.json": "ec0ef07a9cf3896d392309608379c31af555da025378b51e0885a8a463762a02",
+        "splits/official_jarvis_scalar.json": "d661bdb42a96e68884f0f0327a712ab82672df7e057c21649e3bc9130596739a"
+      },
+      "checkpoint_hash": "3be3ec796002",
+      "split_hash": "N/A",
+      "seed": 42,
+      "creation_timestamp": "2026-09-24T11:42:14.741440+00:00"
     }
   ]
 }
