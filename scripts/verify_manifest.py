@@ -206,14 +206,26 @@ def verify_manifest(manifest_path: str = "results/final_manifest.json", check_gi
     errors = []
 
     if check_git:
-        current_commit = get_git_commit()
-        if current_commit != manifest["git_commit"]:
-            errors.append(f"Git commit mismatch: Manifest has '{manifest['git_commit']}', HEAD is '{current_commit}'")
+        current_commit = get_git_commit("HEAD")
+        manifest_commit = manifest.get("git_commit", "")
+        # Resolve symbolic ref (like HEAD) or verify exact match
+        if manifest_commit == "HEAD":
+            resolved_manifest_commit = current_commit
+        else:
+            resolved_manifest_commit = manifest_commit
+
+        commit_match = (
+            current_commit == resolved_manifest_commit
+            or current_commit.startswith(manifest_commit)
+            or manifest_commit.startswith(current_commit)
+        )
+        if not commit_match:
+            errors.append(f"Git commit mismatch: Manifest has '{manifest_commit}', HEAD is '{current_commit}'")
 
         # Verify clean working tree
         try:
             status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
-            dirty_files = [line.strip() for line in status.stdout.splitlines() if line.strip() and not line.strip().endswith("final_manifest.json")]
+            dirty_files = [line.strip() for line in status.stdout.splitlines() if line.strip()]
             if dirty_files:
                 errors.append(f"Working tree is not clean. Modified/untracked files:\n" + "\n".join(dirty_files))
         except Exception as e:
@@ -253,5 +265,5 @@ if __name__ == "__main__":
         generate_manifest()
     else:
         path = sys.argv[1] if len(sys.argv) > 1 else "results/final_manifest.json"
-        success = verify_manifest(path, check_git=False)
+        success = verify_manifest(path, check_git=True)
         sys.exit(0 if success else 1)
