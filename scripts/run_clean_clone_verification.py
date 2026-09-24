@@ -15,11 +15,7 @@ def main():
     target_commit = sys.argv[1] if len(sys.argv) > 1 else "HEAD"
     repo_url = "https://github.com/hubdk17/Material_Science_Repo_Jarvis.git"
 
-    temp_dir = Path(tempfile.gettempdir()) / "clean_clone_verification"
-    if temp_dir.exists():
-        shutil.rmtree(temp_dir, ignore_errors=True)
-    temp_dir.mkdir(parents=True, exist_ok=True)
-
+    temp_dir = Path(tempfile.mkdtemp(prefix="clean_clone_verify_"))
     clone_dir = temp_dir / "Material_Science_Repo_Jarvis"
 
     print(f"=== CLONING REPOSITORY TO CLEAN DIRECTORY: {clone_dir} ===")
